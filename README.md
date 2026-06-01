@@ -1,5 +1,5 @@
 # Introduction
-This repository contains the course materials for hands-on exercise of the "Variants Annotation and Phenotype Analysis" session in the Quantitative Genomics workshop on July 7-8, 2025. 
+This repository contains the course materials for hands-on exercise of the "Variants Annotation and Phenotype Analysis" session in the Quantitative Genomics workshop on June 1-2, 2026. 
 
 # Preparation of computing environment
 Both the lectures and hands-on exercises will be taught via Zoom video conference online. To ensure the cross-platform compatibility, we will only use Rstudio Cloud to implement tools that are developed in Perl and Python.
@@ -36,7 +36,7 @@ Typically you will go to the [ANNOVAR website](http://annovar.openbioinformatics
 /cloud/project/genomics_exercise
 ```
 
-Please note that this is a sub-sampled version of ANNOVAR for the purpose of th exercise today (to reduce file size significantly to <200Mb), and it should not be used in any other real data analysis. You can view all the files in `exercise1` directory:
+Please note that this is a **sub-sampled version of ANNOVAR** for the purpose of th exercise today (to reduce file size significantly to <200Mb), and it should not be used in any other real data analysis. You can view all the files in `exercise1` directory:
 
 ![image](https://user-images.githubusercontent.com/5926328/173242142-864ba9a2-5ac2-4d9f-94f8-a3c4a3d61d52.png)
 
@@ -565,6 +565,39 @@ After installing the database, We can use PhenoSV. In terminal, use command:
 ### 12. Summary of the phenotype analysis exercises
 
 In summary, a number of computational tools such as Phen2Gene, AMELIE and GADO can perform phenotype-driven gene prioritization. Phen2Gene provides webserver or API, or you can install and run locally (which is important to deploy it in batch processing mode), and it does not require a list of random genes to run either.
+
+### 13. Optional exercise
+
+This is an interesting exercise and it is **completely optional**. It is an after-class exercise, since you most likely cannot complete it during the lab session.
+
+Genetic variants reported in the scientific literature are often described using different nomenclatures, including genomic (chromosomal) coordinates, cDNA-level (HGVS c.), and protein-level (HGVS p.) annotations. Although this inconsistency is widely recognized, it is frequently not addressed in practice by authors or journals, making it difficult to compare and integrate variant data across studies. A human genetics research article published in 2026 (https://pmc.ncbi.nlm.nih.gov/articles/PMC12858432/) reports 13 genetic variants in Table 1 using a mixture of genomic, cDNA (c.), and protein (p.) notation, reflecting the fact that these variants were originally described in different publications and databases.
+
+For each of the 13 variants (note that variants 6 and 7 are identical to 2, and variant 12 is identical to 11, so you only have 10 variants to analyze), perform the following tasks:
+
+1.	Variant normalization and mapping: Convert each variant into a genomic coordinate (chromosome position) in GRCh38 reference genome build.
+2.	Population frequency annotation: Retrieve the allele frequency of each variant from the gnomAD v4.1.1 database. Report both the overall allele frequency and in middle eastern ancestry groups.
+
+Hints / Notes:
+
+1.	You may use variant normalization tools such as Mutalyzer, which supports conversion between HGVS formats and genomic coordinates. While several tools are available for variant normalization, I found this one is more user-friendly since other tools tend to be command line based.
+2. We discussed in class that liftover is needed to convert genomic coordinates from different genome builds (such as from GRCh37/hg19 to GRCH38/hg38). A good site to use is https://liftover.broadinstitute.org/ but UCSC Genome Browser and other command line tools also have this functionality.
+
+| Family	| Variant (as reported in paper)	| Chr	| Position (GRCh38)	| Reference allele	| Alternative allele	| gnomAD AF	| gnomAD AF (middle eastern) |
+|------|------|------------|---|--|--|--|--|
+| 1 | c.1012C>T (p.Arg338) | 7 |
+| 2 | g.99701748G>A | 7 |
+| 3 | g.99703887A>C | 7 |
+| 4 | g.99700491del | 7 |
+| 5 | g.99703627G>A | 7 |
+| 6 | g.99701748G>A | 7 |
+| 7 | g.99701748G>A | 7 |
+| 8 | c.802C>T (p.R268X) | 7 |
+| 9 | c.1225T>C (p.F409L) | 7 |
+| 10 | c.1339G>A (p.Val447Met) | 7 |
+| 11 | c.1363G>A (p.Ala455Thr) | 7 |
+| 12 | c.1363G>A (p.Ala455Thr) | 7 |
+| 13 | c.258delG (p.A87Pfs44) | 7 |
+
 
 # CITATIONS:
 
