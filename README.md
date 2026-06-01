@@ -6,7 +6,7 @@ Both the lectures and hands-on exercises will be taught via Zoom video conferenc
 
 Students need to go to [Posit Cloud](https://posit.cloud/) to create your own account before the lectures: 
 
-After you are added to "2025 Genomics Labs" space, you can click "Annotation" project to start the exercise. The direct link is provided in Slack channel. 
+After you are added to "2026 Genomics Labs" space, you can click "Annotation" project to start the exercise. The direct link is provided in Slack channel. 
 
 When the student opens an assignment project, Posit Cloud will automatically make a copy for them. In other words, each student will work on your own copy of the virtual machine without influencing each other's files.
 
